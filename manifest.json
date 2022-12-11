@@ -1,13 +1,18 @@
 {
+  // NOTE :
+  //   all of keys aren´t soecified to be mandatory are optionnal, so you can delete these if you want.
+  
   "browser_specific_settings": {
     "gecko": {
-      "id": "addon@example.com",
-      "strict_min_version": "42.0"
+      "id": "...@...", // ID of your extention (format : addon@example.com)
+      "strict_min_version": "..." // minimal stable version
     }
   },
 
   "background": {
-    "scripts": ["jquery.js", "mon-script-arriere-plan.js"],
+    "scripts": ["....js", "....js"],
+    //           ~~~       ~~~
+    //     scripts to run in background
   },
 
   "browser_action": {
@@ -51,9 +56,11 @@
     "48": "....png", // Main icon of the extention in 48x48 px sized
     "96": "....png"  // Same, but with 96x96 px size
   },
-
+  
+  // MANDATORY KEY
   "manifest_version": 2, // version of the norm applied in this file
 
+  // MANDATORY KEY
   "name": "...", // Name of the extention
 
   "page_action": {
@@ -67,6 +74,7 @@
 
   "permissions": ["..."], // additionnal permissions alllowed to the extention (ex : webNavigation)
 
+  // MANDATORY KEY
   "version": "...", // Version of the extention
 
   "user_scripts": {
