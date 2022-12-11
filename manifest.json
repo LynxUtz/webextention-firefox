@@ -1,0 +1,77 @@
+{
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "addon@example.com",
+      "strict_min_version": "42.0"
+    }
+  },
+
+  "background": {
+    "scripts": ["jquery.js", "mon-script-arriere-plan.js"],
+  },
+
+  "browser_action": {
+    "default_icon": {
+      "19": "button/....png", // Default button logo 19x19 px.
+      "38": "button/....png"  // Same but bigger (38x38 px.)
+    },
+    "default_title": "...", // Title of the extention's button
+    "default_popup": "popup/....html" // Main page will be appear when user click on the extention´s button. Status : popup
+  },
+
+  "commands": {
+    "toggle-feature": {
+      "suggested_key": {  // Shortcut key to access to popup page
+        "default": "Ctrl+Shift+...",
+        "linux": "Ctrl+Shift+..."
+      },
+      "description": "..." // Use a 'toggle-feature' event
+    }
+  },
+
+  "content_security_policy": "... 'self' https://...; ... 'self'",
+  //                          ~~~        ~~~~~~~~~~~  ~~~
+  //         source of the script        web page     source of the object
+  //                                     of the
+  //                                     extention
+
+  "content_scripts": [
+    {
+      "exclude_matches": ["..."], // cases to excludes (regular expressions) (ex : *://developer.mozilla.org/*)
+      "matches": ["..."], // cases to include (regular expressions) (ex : *://*.mozilla.org/*)
+      "js": ["..."] // source of the content script (ex : borderify.js)
+    }
+  ],
+
+  "default_locale": "...", // default language/country/... (ex : borderify.js)
+
+  "description": "...", // A description of the extention
+
+  "icons": {
+    "48": "....png", // Main icon of the extention in 48x48 px sized
+    "96": "....png"  // Same, but with 96x96 px size
+  },
+
+  "manifest_version": 2, // version of the norm applied in this file
+
+  "name": "...", // Name of the extention
+
+  "page_action": {
+    "default_icon": {
+      "19": "button/....png", // Icon of the button in the adress bar (19x19 px)
+      "38": "button/....png"  // Same in 38x38 size
+    },
+    "default_title": "...", // Title of the adress bar´s extention button
+    "default_popup": "popup/....html" // page will apear when user click on this button
+  },
+
+  "permissions": ["..."], // additionnal permissions alllowed to the extention (ex : webNavigation)
+
+  "version": "...", // Version of the extention
+
+  "user_scripts": {
+    "api_script": "....js", // script to give API to users
+  },
+
+  "web_accessible_resources": ["..."] // turn accessible files specified stocked locally
+}
